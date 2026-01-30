@@ -1,0 +1,19 @@
+name: "username/shortcut-otp"
+version: "0.1.0"
+description: "Shortcut OTP App"
+
+[[module]]
+name: "php"
+source: "php/php:8.2"
+
+[[command]]
+name: "php"
+module: "php"
+runner: "https://wasmer.io/runners/http-server"
+
+[command.annotations]
+"https://wasmer.io/runners/http-server" = { public_directory = ".", index_page = "index.php" }
+
+[[fs]]
+mount = "/"
+src = "."
