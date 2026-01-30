@@ -1,0 +1,12 @@
+kind: App
+name: shortcut-otp-app
+package: php/php:8.2
+config:
+  env:
+    APP_DEBUG: "true"
+  volumes:
+    - name: data
+      mount: /data
+annotations:
+  ext-http.wasmer.io/index-page: "index.php"
+  ext-http.wasmer.io/public-directory: "."
